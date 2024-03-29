@@ -8,7 +8,6 @@ exports.cloudnairyconnect= ()=>{
             api_secret : process.env.API_SECRET
         })
         console.log("CD connected");
-
         
     } catch (error) {
         console.log("error connecting CD"+error)

@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 
 const userRoutes = require("./routes/User");
-const paymentRoutes = require("./routes/Payments");
+//const paymentRoutes = require("./routes/Payments");
 const profileRoutes = require("./routes/Profile");
 const CourseRoutes = require("./routes/Course");
 
@@ -16,7 +16,8 @@ const { cloudnairyconnect } = require("./config/cloudinary");
 
 const dotenv = require("dotenv");
 dotenv.config();
-
+console.log(process.env.CORS_ORIGIN);
+console.log(process.env.PORT);
 const PORT = process.env.PORT || 5000;
 database.connect();
 
@@ -42,7 +43,7 @@ cloudnairyconnect();
 
 app.use("/api/v1/auth", userRoutes);
 
-app.use("/api/v1/payment", paymentRoutes);
+//app.use("/api/v1/payment", paymentRoutes);
 
 app.use("/api/v1/profile", profileRoutes);
 
